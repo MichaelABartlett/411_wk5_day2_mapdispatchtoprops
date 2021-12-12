@@ -10,9 +10,12 @@ import {
 import DeleteIcon from '@material-ui/icons/Delete'
 import Chart from './Chart'
 import Total from './Total'
-import AddCar from './AddCar'
+import AddCar from '../containers/AddCar'
+import { removeCar } from '../redux/Actions'
  
 const Dashboard = (props) => {
+
+
     return (
         <Container maxWidth="lg" className="car-container">
             <h4>Welcome, {props.user.username}</h4>
@@ -44,6 +47,7 @@ const Dashboard = (props) => {
                         <TableCell>{car["horsepower"]}</TableCell>
                         <TableCell>
                             <DeleteIcon
+                                onClick={() => {props.removeCar(idx)}}
                                 // add onClick method here
                                 className="icon text-red" />
                         </TableCell>
