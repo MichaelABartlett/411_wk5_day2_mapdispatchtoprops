@@ -2,9 +2,7 @@ import { combineReducers } from 'redux'
 
 const user = (state = null) => state
 
-// add switch statements in here
 const cars = (state = [], action) => {
-    console.log("action: ", action)
     switch(action.type) {
        
         case 'ADD_CAR':
